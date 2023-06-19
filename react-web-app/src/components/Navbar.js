@@ -1,5 +1,5 @@
 import { Button } from "./Button";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css';
 
@@ -25,6 +25,13 @@ function Navbar() {
         setButton(true)
       }
     }
+
+    useEffect(() => {
+      showButton();
+    }, []);
+
+    // effect will run once because of the empty Array
+    // upon by calling the showButton function the Sign up button will disappear
   
     /* `window.addEventListener('resize', showButton)` is adding an event listener to the window object
     that listens for a change in the size of the window. When the window is resized, the
@@ -37,10 +44,11 @@ function Navbar() {
   return (
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             TRVL <i className="fab fa-typo3" />
           </Link>
-          <div className="menu-icon" alt="Hamburger_Menu" onClick={handleClick}>
+          <div className="menu-icon" alt="Hamburger_Menu" onClick={handleClick}> 
+          {/* allows onClick of logo to close hamburger menu */}
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
             {/* using a className to toggle between the hamburger menu
                     when not clicked it is the hamburger menu
@@ -65,11 +73,6 @@ function Navbar() {
             <li className="nav-item">
               <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
                 Services
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/sign-up" className="nav-links" onClick={closeMobileMenu}>
-                Sign Up
               </Link>
             </li>
           </ul>
