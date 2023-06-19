@@ -2,13 +2,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .home,
 .services,
 .products,
-.sign-up {
+.sign-up,
+.about {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -16,28 +17,43 @@
   font-size: 3rem;
 }
 
+.about {
+  background-image: url("./images/img-6.jpg");
+  background-position: center;
+  background-size: fill;
+  height: 100vh;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
 .services {
-  background-image: url('./images/img-2.jpg');
+  background-image: url("./images/img-2.jpg");
   background-position: center;
   background-size: cover;
+  height: 100vh;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
 }
 
 .products {
-  background-image: url('./images/img-1.jpg');
+  background-image: url("./images/img-3.jpg");
   background-position: center;
-  background-size: fill;
+  background-size: cover;
+  height: 100vh;
+  object-fit: contain;
+  overflow: hidden;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
 }
 
 .sign-up {
-  background-image: url('./images/img-8.jpg');
+  background-image: url("./images/img-8.jpg");
   background-position: center;
   background-size: cover;
+  height: 100vh;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
